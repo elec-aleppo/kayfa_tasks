@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    
+</head>
+<body>
+
+    <main>
+        <h1>Register Your Account</h1>
+
+        <form method="POST" action="/register">
+            
+            <!-- Sec1: Account -->
+            <fieldset>
+                <legend>Account Information</legend>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+<br>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password" title="Password must be at least 8 characters long.">
+                </div>
+            </fieldset>
+<br>
+            <!-- Sec2: Personal -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="30" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{11}" title="Please enter your phone number " autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="date of Birth">Date of Birth:</label>
+                    <input type="date" id="date of Birth" name="date of Birth" required max="2008-12-31" title="You must be at least 18 years old to register.">
+                </div>
+            </fieldset>
+
+            <!-- Sec3: Preferences -->
+            <fieldset>
+                <legend>Preferences</legend>
+                
+                <div class="form-group">
+                       <div class="radio-group">
+                            <input type="radio" id="contact-email" name="contact_pref" value="email" required>
+                            <label for="contact-email">Email</label>
+                            
+                            <input type="radio" id="contact-phone" name="contact_pref" value="phone">
+                            <label for="contact-phone">Phone</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="interest-tech" name="interests" value="technology">
+                            <label for="interest-tech">Technology</label>
+                            
+                            <input type="checkbox" id="interest-sports" name="interests" value="sports">
+                            <label for="interest-sports">Sports</label>
+                            
+                            <input type="checkbox" id="interest-arts" name="interests" value="arts">
+                            <label for="interest-arts">Arts</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country of Residence:</label>
+                    <select id="country" name="country" required>
+                        <option value="">-- Please select your country --</option>
+                        <option value="SY">SYRIA</option>
+                        <option value="eg">EGYPT</option>
+                        <option value="le">LEBANON</option>
+                        <option value="jo">JORDEN</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <button type="submit">Register Account</button>
+        </form>
+
+        <!-- Sample Data Table -->
+        <h2>System Records</h2>
+        <table border="3">
+            <caption>Sample data Entries</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RANAM Maktabi</td>
+                    <td>Ranam.Maktabi@gmail.com</td>
+                    <td>SYRIA</td>
+                </tr>
+                <tr>
+                    <td>Hala Maktabi</td>
+                    <td>Hala.Maktabi@gmail.com</td>
+                    <td>EGYPT</td>
+                </tr>
+                <tr>
+                    <td>Safi Maktabi</td>
+                    <td>Safi.Maktabi@gmail.com</td>
+                    <td>LEBANON</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
