@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+
+    <form action="/signup-submit" method="POST">
+        <h2>Sign Up</h2>
+
+        <!-- Full Name (text, required, with minlength/maxlength) -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="30" placeholder="your full name">
+        <br>
+        <!-- Email (email, required) -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="youremail@example.com">
+         <br>
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+<br>
+        <!-- Website (url) -->
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" placeholder="https://yourWed.com">
+<br>
+        <!-- Phone (tel) -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+963 944 587 620">
+<br>
+        <!-- Age (number) -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="25" max="90" placeholder="35">
+<br>
+        <!-- Birthday (date) -->
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+<br>
+        <!-- File input (multiple files) -->
+        <label for="documents">Upload Documents:</label>
+        <input type="file" id="documents" name="documents" multiple>
+<br>
+        <!-- Hidden input with fixed value -->
+        <input type="hidden" id="source" name="source" value="website_signup">
+
+        <!-- Verification Code (pattern validation) -->
+        <label for="code">Verification Code (5 digits):</label>
+        <input type="text" id="code" name="code" pattern="[0-9]{5}" title="Please enter exactly 5 digits (0-9)" placeholder="12345">
+<br>
+        <!-- Gender (radio buttons with same name) -->
+        <div class="radio-group">
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+
+        <!-- Hobbies (checkboxes) -->
+        <div class="checkbox-group">
+            <label>Hobbies:</label><br>
+            <input type="checkbox" id="coding" name="hobbies" value="coding">
+            <label for="coding">Coding</label>
+            <input type="checkbox" id="gaming" name="hobbies" value="gaming">
+            <label for="gaming">Gaming</label>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">Reading</label>
+        </div>
+
+        <!-- Country (select with optgroup) -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <optgroup label="SYRIA">
+                <option value="Aleppo">Aleppo</option>
+                <option value="Damuscus">Damuscus</option>
+                <option value="Homes">Homes</option>
+            </optgroup>
+            <optgroup label="Egypt">
+                <option value="Cairo">Cairo</option>
+                <option value="Geza">Geza</option>
+                <option value="Escandria">Escandria</option>
+            </optgroup>
+            <optgroup label="Lebanon">
+                <option value="Bierut">Bierut</option>
+                <option value="Trablos">Trablos</option>
+                <option value="Jonya">Jonya</option>
+            </optgroup>
+            <optgroup label="Other">
+                <option value="Iraq">Iraq</option>
+                <option value="Turkish">Turkish</option>
+            </optgroup>
+        </select>
+
+        <!-- Notes (textarea with default value) -->
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" rows="2" placeholder="Tell us about yourself...">Nice to meet you!</textarea>
+
+       
+        <button type="submit">Sign Up</button>
+        <button type="reset">reset</button>
+    </form>
+
+</body>
+</html>
