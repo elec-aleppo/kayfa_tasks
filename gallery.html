@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور - Gallery</title>
+</head>
+<body>
+
+    <h1>معرض الصور </h1>
+
+    <!-- الصورة 1 -->
+    <h2>صورة عادية </h2>
+    <img src="https://picsum.dev/400/300" 
+         alt="صورة عادية اولى"  width="400"   height="300">
+
+  <!-- الصورة 2 -->
+    <h2>صورة ثانية </h2>
+    <img src="https://picsum.dev/400/300?blur=2" 
+         alt="صورة عادية ثانية"
+         width="400" 
+         height="300">
+
+    <!-- الصورة 3 -->
+    <h2> صورة ثالثة</h2>
+    <img src="https://picsum.dev/400/400" 
+         alt="صورة عادية ثالثة"
+          width="700" 
+         height="450">
+
+    <hr>
+
+    <!-- الصورة الديكورية -->
+    <h2>Decorative Image</h2>
+    <!-- 
+        هذه الصورة ديكورية بحتة ولا تضيف أي معلومات جديدة للمحتوى.
+    -->
+    <img src="https://picsum.dev/51" 
+         alt="" 
+         width="500" 
+         height="500">
+
+    <hr>
+
+   
+    <h2> Figure + Figcaption</h2>
+    <figure>
+        <img src="https://picsum.dev/400/400" 
+             alt="منظر جميل لبيت صيني اصيل في هونغ كونغ" 
+             width="650" 
+             height="430">
+        <figcaption>منظر جميل لبيت صيني عريق</figcaption>
+    </figure>
+
+    <hr>
+
+   
+    <h2> Responsive Image with srcset</h2>
+    <p>استخدام srcset:</p>
+    <img src="https://picsum.dev/400/300" 
+         srcset="https://picsum.dev/400/300 300w,
+                 https://picsum.dev/400/300 800w"
+         sizes="(max-width: 400px) 300px, 800px"
+         alt="منظر طبيعي جميل" 
+        >
+
+    <hr>
+
+   
+    <h2> فيديو مع عناصر تحكم</h2>
+    <video controls 
+           poster="https://picsum.photos/800/450?random=7" 
+           width="800" 
+           height="450">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+       
+    </video>
+
+</body>
+</html>
