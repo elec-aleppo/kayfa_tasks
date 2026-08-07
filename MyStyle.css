@@ -1,0 +1,170 @@
+
+@font-face {
+  font-family: "Outfit";
+  src: url(./assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "young-serif";
+  src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(120, 6%, 97%);
+  padding: 20px;
+}
+
+
+.recipe-card {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  max-width: 650px;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.recipe-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin: 20px;
+  max-width: calc(100% - 40px);
+}
+
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: hsl(30, 10%, 34%);
+}
+
+
+h1 {
+  font-size: 30px;
+  margin: 2rem 0 1rem 0;
+}
+
+h1, h2 {
+  font-family: "young-serif";
+  font-weight: 400;
+  color: hsl(14, 40%, 30%);
+}
+
+h2:first-of-type {
+  padding-bottom: 0.6rem;
+}
+
+h2:not(:first-of-type) {
+  border-top: 1px solid lightgray;
+  margin: 1.5rem 0 0 0;
+  padding: 1.5rem 0 1rem 0;
+}
+
+h3 {
+  font-family: "young-serif";
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  line-height: 1.5rem;
+  padding: 0.3rem 0;
+}
+
+li::marker {
+  font-weight: bold;
+  color: hsl(14, 40%, 30%);
+}
+
+
+p {
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}
+
+
+.content {
+  padding: 0 30px 30px;
+}
+
+
+.Preparation-time {
+  background-color: rgb(245, 243, 240);
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: calc(100% - 40px);
+  margin: 20px 20px 1rem 20px;
+}
+
+
+.bold {
+  font-weight: bold;
+  color: hsl(24, 5%, 10%);
+}
+
+
+table {
+  width: 100%;
+  max-width: 37rem;
+  border-collapse: collapse;
+}
+
+table td {
+  text-indent: 2.3rem;
+  border-bottom: 1px solid lightgray;
+  padding: 0.8rem 0 1rem 0;
+}
+
+.measur {
+  color: hsl(14, 40%, 30%);
+  font-weight: bold;
+}
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (max-width: 650px) {
+  .recipe-card {
+    border-radius: 0;
+  }
+
+  .recipe-image {
+    border-radius: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
