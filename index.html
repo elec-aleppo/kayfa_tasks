@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" sizes="32*32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>ranam_Tips_calculater</title>
+</head>
+<body>
+    <header>
+        <img src="./images/logo.svg" alt="">
+    </header>
+ <main>
+ 
+     <div class="container">
+        <!-- left part -->
+        <div class="leftpart">
+            <!-- bill -->
+         <div class="label">
+          <label for="input">Bill</label>
+         </div>  
+
+          <div class="input_bill">
+            <input type="number" id="input">
+            <img src="./images/icon-dollar.svg" alt="">
+          </div><!-- bill -->
+
+            <!-- Select tips -->
+
+           <div class="label">
+           <label for="selectTip">Select Tip %</label>
+           </div>
+
+             <!-- btn tips -->
+            <div class="btnselectTip">
+            <button class="btn">5%</button>
+            <button class="btn">10%</button>
+            <button class="btn active">15%</button>
+            <button class="btn">25%</button>
+            <button class="btn">50%</button>
+            <input type="number" placeholder="Custom" id="selectTip">
+            </div> <!--btn tips -->
+
+            <!-- num of people -->
+             <div class="label">
+             <label for="people">Number of People</label>
+             <p id="error"></p>
+             </div>
+
+             <div class="numfopeople">
+              <input type="number" placeholder="0" id="people">
+              <img src="./images/icon-person.svg" alt="">
+             </div> <!--num of people -->
+        
+            </div> <!-- leftpart -->
+         
+       <!-- right part -->
+         <div class="rightpart">
+             <!-- tip amount -->
+              <div class="amount">
+                <div class="title">
+                  <p>Tip Amount <br /><span>/ Person</span></p>
+                  <div class="TipAmount">$5</div> 
+                </div>
+
+                <div class="title">
+                  <p>Total <br /><span>/ Person</span></p>
+                  <div class="TipAmount">$200</div> 
+                </div>
+
+              </div> <!-- amount -->
+                     <!-- reset -->
+                      <button class="reset">Reset</button>
+         </div>  <!-- rightpart -->  
+     </div><!-- container -->
+ 
+ </main>  
+ 
+ 
+   <script src="./app.js"></script>   
+</body>
+</html>

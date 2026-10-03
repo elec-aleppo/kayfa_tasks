@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --var-Green-400: hsl(172, 67%, 45%);
+    --var-btn-Green-900: hsl(183, 100%, 15%);
+    --var-back-label-500: hsl(186, 14%, 43%);
+    --var-Grey-400: hsl(184, 14%, 56%);
+    --var-back-body: hsl(185, 41%, 84%);
+    --var-Grey-50: hsl(189, 47%, 97%);
+    --var-White: hsl(0, 100%, 100%);
+    --var-a: hsl(228, 45%, 44%); 
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+body{
+background-color: var(--var-back-body);
+font-family: 'space Mono',sans-serif;
+font-weight: 700;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+height: 100vh;
+}
+
+.container{
+    background-color: var(--var-White);
+    border-radius: 15px;
+}
+
+.leftpart{
+    padding: 30px;
+}
+
+.label{
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--var-back-label-500);
+    margin-bottom: 10px;
+}
+
+.input_bill{
+  position: relative;
+}
+
+.input_bill > input{
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  width: 350px;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-top: 0%;
+  border: none;
+  background-color: var(--var-Grey-50);
+  color: var(--var-btn-Green-900);
+  cursor: pointer;
+}
+.input_bill > img{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.input_bill > input:focus {
+    outline: none;
+}
+
+.btnselectTip{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.btnselectTip > button{
+border: none;
+border-radius: 5px;
+background-color: var(--var-btn-Green-900);
+font-family: inherit;
+font-size: 20px;
+cursor: pointer;
+color: var(--var-White);
+padding: 10px;
+}
+
+.btnselectTip > button.active{
+    background-color: var(--var-Green-400);
+    color: var(--var-btn-Green-900);
+}
+
+button:active{
+    transform: scale(0.97);
+}
+
+.btnselectTip > input{
+    font-family: inherit;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background-color: var(--var-Grey-50);
+    color: var(--var-btn-Green-900);
+    border-radius: 5px;
+}
+
+.numfopeople{
+    position: relative;
+}
+.numfopeople > input{
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    width: 350px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-top: 0%;
+    border: none;
+    background-color: var(--var-Grey-50);
+    color: var(--var-btn-Green-900);
+    cursor: pointer;
+}
+.numfopeople > img{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+.numfopeople > input:focus {
+    outline: none;
+}
+
+.rightpart{
+    background-color: var(--var-btn-Green-900);
+    border: none;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.amount{
+    margin-top: 50px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.title > p {
+    font-family: inherit;
+    font-size: 20px;
+    color: var(--var-White);
+}
+.title p>span{
+    opacity: 0.5;
+}
+.title > .TipAmount {
+   font-size: 30px;
+    font-family: inherit;
+    color: var(--var-Grey-400);
+    font-weight: 700;
+   }
+
+.reset{
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--var-Green-400);
+    font-size: 16px;
+    color: var(--var-Green-900);
+    font-weight: 700;
+    width: 380px;
+    cursor: pointer;
+    
+}   
+@media (min-width : 1200px){
+    .container{
+        display: flex;
+        width: 920px;
+        height: 490px;
+        margin: 0 auto;
+    }
+    .leftpart{
+        width: 50%;
+    }
+
+    .rightpart{
+        width: 50%;   
+        margin-top: 35px;
+        margin-bottom: 35px;
+        margin-right: 35px;
+        padding-top: 50px;
+        padding-top: 20px;
+        padding-inline: 20px;
+        position: relative;
+            }
+
+    .reset{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 370px;
+    margin: 0 auto;
+  }    
+  .title{
+    padding-inline: 40px;
+}     
+.input_bill > input {
+     width: 379px;
+ }
+ .input_bill > img {
+    position: absolute;
+    top: 15px;
+}
+ .numfopeople > input {
+     width: 379px;
+}
+ .numfopeople > img {
+   position: absolute;
+    top: 15px;
+}
+.btnselectTip{
+    grid-template-columns: repeat(3,1fr);
+    margin-bottom: 2.5rem;
+}
+.btn{
+     width: 115px;
+}
+.btnselectTip > input{
+width: 100%;
+}
+@media (min-width: 375px) and (max-width :1199px){
+    .reset{
+       width: 100%;
+    }
+}
+}
