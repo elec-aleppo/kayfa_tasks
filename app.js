@@ -19,27 +19,31 @@ btnEl.forEach((btn)=> {
     btn.addEventListener('click',handleClick);
 })
 
-function handleClick (e){
-btnEl.forEach((btn)=> {
-    btn.classList.remove('active');
 
 
-    if(e.target.innerHTML == btn.innerHTML){
-     btn.classList.add('active');
-     tipVal = parseFloat(btn.innerHTML) / 100;
-     console.log(tipVal);
-    }
-});
-     selectTip.value = "";
-     calculate();
+function handleClick(e){
+    btnEl.forEach((btn)=> {
+        btn.classList.remove('active');
+        
+     
+        if(e.target.dataset.value === btn.dataset.value){
+            btn.classList.add('active');
+            tipVal = parseFloat(btn.dataset.value) / 100;
+        }
+    });
+    selectTip.value = "";
+    calculate();
 }
-//validate
+
+
 function validateBill(){
+    
     if (inputEl.value.includes(',')){
-        inputEl.value.replace(',','.');
+        inputEl.value = inputEl.value.replace(',', '.');
     }
-    billVal=parseFloat(inputEl.value);
-     calculate();
+  
+    billVal = parseFloat(inputEl.value) || 0;
+    calculate();
 }
 // selectTip//
 function tipCustom(){
@@ -51,26 +55,36 @@ btn.classList.remove('active');
         calculate();
     }
 }
-//set people val//
-function inputPeopleVal()
-{
+
+function inputPeopleVal() {
     peopleVal = parseFloat(peopleEL.value);
-    if(peopleVal <= 0) {
-        errorEL.innerHTML = "number must be greater than zero";
-       }
-    calculate();
+    
+    if (!peopleVal || peopleVal <= 0) {
+        errorEL.innerHTML = "Can't be zero"; 
+        peopleVal = 0; 
+    } else {
+        errorEL.innerHTML = ""; 
     }
+    calculate();
+}
 
-// calc//
+
 function calculate(){
-    if (peopleVal >=1){
-        let tip=(billVal * tipVal)/peopleVal;
-        let totalAmount = (billVal*(tipVal+1)/peopleVal);
+   
+    let safeBill = isNaN(billVal) || billVal < 0 ? 0 : billVal;
+    let safePeople = isNaN(peopleVal) || peopleVal < 1 ? 1 : peopleVal;
+    let safeTip = isNaN(tipVal) ? 0 : tipVal;
 
-        totalVal[0].innerHTML = '$'+ tip.toFixed(2);
-       console.log(totalVal[0]);
-        totalVal[1].innerHTML = '$'+ totalAmount.toFixed(2);
-         console.log(totalVal[1]);
+    if (safePeople >= 1 && safeBill > 0) {
+        let tip = (safeBill * safeTip) / safePeople;
+        let totalAmount = (safeBill * (safeTip + 1)) / safePeople;
+
+        totalVal[0].innerHTML = '$' + tip.toFixed(2);
+        totalVal[1].innerHTML = '$' + totalAmount.toFixed(2);
+    } else {
+       
+        totalVal[0].innerHTML = '$0.00';
+        totalVal[1].innerHTML = '$0.00';
     }
 }
 //reset///
