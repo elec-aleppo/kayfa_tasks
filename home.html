@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>task 9 js</title>
+</head>
+<body>
+<!-- Buttoms -->
+ <div id = "btn-container">
+   <button id="btn-all">All</button>
+   <button id="btn-instock">InStock</button>
+   <button id="btn-cheap">Cheap</button>
+   <button id="btn-expensive">Expensive</button> 
+   <button id="btn-sort">Sort</button>
+   <button id="btn-discount">Discount 10%</button>
+   <button id="btn-reset">Reset</button>
+  </div>
+ <div>
+    <label for="category-filter"></label>
+    <select id="category-filter">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothes">Clothes</option>
+        <option value="food">Food</option>
+    </select>
+ </div>
+ <!-- list product -->
+  <div id="product-list">
+  <ul id="list"></ul>
+  </div>
+
+  <!-- summary -->
+   <div id="summary"></div>
+
+<!-- form -->
+ <form id="add-product-form">
+ <input type="text" id="product-name" placeholder="Product Name">   
+ <select  id="product-category">
+    <option value="all">------</option>
+    <option value="electronics">Electronics</option>
+    <option value="clothes">Clothes</option>
+    <option value="food">Food</option>
+ </select>
+ <input type="number" id="product-price" placeholder="Product Price">
+ <input type="number" id="product-stock" placeholder="Product-Stock">
+ <button type="submit"> Add Product</button>
+ </form>
+
+ <!-- errors -->
+  <div id="msg-error"></div>
+
+  <script src="./app.js"></script>  
+</body>
+</html>

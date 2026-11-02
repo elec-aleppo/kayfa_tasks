@@ -1,0 +1,269 @@
+/* =========================================
+   1. الإعدادات العامة والخلفية (Global)
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #fff0f3 0%, #ffffff 100%);
+  color: #1a5276; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* =========================================
+   2. أزرار التحكم العلوية (Top Buttons)
+   ========================================= */
+#btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #ffb7c5;
+  color: #1a5276;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 183, 197, 0.3);
+}
+
+button:hover {
+  background-color: #ff9eb0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 158, 176, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   3. فلتر الفئة (Category Filter)
+   ========================================= */
+#category-filter {
+  display: block;
+  margin: 0 auto 25px auto;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #ffb7c5;
+  background-color: #ffffff;
+  color: #1a5276;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#category-filter:focus {
+  border-color: #ff8fa3;
+}
+
+/* =========================================
+   4. قائمة المنتجات - GRID LAYOUT (الأهم!)
+   ========================================= */
+#list {
+  list-style-type: none;
+  max-width: 900px;
+  margin: 0 auto;
+  
+  /* هذا هو السر: استخدام Grid لجعل الأزرار محاذاة عمودياً */
+  display: grid;
+  grid-template-columns: 1fr 120px 120px 120px;
+  /* العمود الأول: معلومات المنتج (مرن) */
+  /* الأعمدة الثلاثة التالية: أزرار +1, Sell, Remove (عرض ثابت 120px) */
+  gap: 15px; /* مسافة بين كل صف */
+}
+
+#list li {
+  /* كل منتج يأخذ الصف كاملاً */
+  grid-column: 1 / -1;
+  
+  background-color: #ffffff;
+  border-left: 5px solid #ffb7c5;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
+  color: #1a5276;
+  
+  /* جعل كل li أيضاً Grid لتقسيمه لـ 4 أعمدة */
+  display: grid;
+  grid-template-columns: 1fr 120px 120px 120px;
+  align-items: center;
+  gap: 15px;
+}
+
+#list li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 15px rgba(255, 183, 197, 0.2);
+}
+
+/* =========================================
+   5. أزرار المنتج - محاذاة عمودية تامة
+   ========================================= */
+#list li button {
+  width: 120px; /* عرض ثابت وموحد */
+  padding: 8px 0;
+  border-radius: 25px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* زر +1 */
+#list li button:nth-of-type(1) {
+  background-color: #e8f4f8;
+  color: #2980b9;
+}
+
+#list li button:nth-of-type(1):hover {
+  background-color: #d4e6f1;
+  transform: scale(1.05);
+}
+
+/* زر Sell */
+#list li button:nth-of-type(2) {
+  background-color: #e8f4f8;
+  color: #2980b9;
+}
+
+#list li button:nth-of-type(2):hover {
+  background-color: #d4e6f1;
+  transform: scale(1.05);
+}
+
+/* زر Remove */
+#list li button:nth-of-type(3) {
+  background-color: #fdecea;
+  color: #e74c3c;
+}
+
+#list li button:nth-of-type(3):hover {
+  background-color: #fadbd8;
+  transform: scale(1.05);
+}
+
+/* =========================================
+   6. حالة نفاد المخزون (Fail)
+   ========================================= */
+#list li.fail {
+  border-left-color: #ff6b6b;
+  color: #c0392b;
+  background-color: #fff5f5;
+}
+
+#list li.fail button:nth-of-type(1),
+#list li.fail button:nth-of-type(2) {
+  background-color: #ffe0e0;
+  color: #c0392b;
+}
+
+#list li.fail button:nth-of-type(1):hover,
+#list li.fail button:nth-of-type(2):hover {
+  background-color: #ffcccc;
+}
+
+/* =========================================
+   7. الملخص (Summary)
+   ========================================= */
+#summary {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #ffe4e1;
+  text-align: center;
+  color: #1a5276;
+  box-shadow: 0 8px 20px rgba(255, 183, 197, 0.15);
+}
+
+#summary p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* =========================================
+   8. نموذج إضافة منتج (Add Product Form)
+   ========================================= */
+#add-product-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 183, 197, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#add-product-form input,
+#add-product-form select {
+  padding: 12px 15px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a5276;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#add-product-form input:focus,
+#add-product-form select:focus {
+  border-color: #ffb7c5;
+  box-shadow: 0 0 8px rgba(255, 183, 197, 0.3);
+}
+
+#add-product-form input::placeholder {
+  color: #aab7c4;
+}
+
+#add-product-form button[type="submit"] {
+  background-color: #2980b9;
+  color: #ffffff;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
+}
+
+#add-product-form button[type="submit"]:hover {
+  background-color: #1f618d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(41, 128, 185, 0.4);
+}
+
+/* =========================================
+   9. رسائل الخطأ (Error Messages)
+   ========================================= */
+#msg-error {
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  min-height: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(231, 76, 60, 0.1);
+}
